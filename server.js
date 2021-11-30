@@ -1,0 +1,18 @@
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+// let {scoreArr} = require('./home.js')
+
+app.get('/api/scores', (req, res) => {
+    let scores = ['Bobby : 8.64s','Brandon : 9.43s','Tyler : 11.99s',]
+    res.status(200).send(scores)
+})
+
+app.listen(3888, () => {
+    console.log('Server is up on port 3888');
+});

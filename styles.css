@@ -1,0 +1,183 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Zen Antique Soft', serif;
+}
+
+body {
+    background-color: lightcyan;
+    /* background-image: url("https://www.wolfram.com/language/11/neural-networks/assets.en/generate-random-images/O_75.png"); */
+}
+
+.match-card {
+    height: 100px;
+    width: 100px;
+    color: blue;
+    background-color:black;
+    border: 2px solid purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .15s;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.match-card:hover {
+    transform: rotatez(5deg) scale(1.05,1.05)
+}
+
+/* .match-card, p:active {
+    color: white;
+} */
+.match-card:active {
+    background-color: gray;
+    /* transform: rotatey(360deg) */
+}
+
+.grid-section {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    position: relative;
+}
+
+
+
+#start-btn {
+    background-color: white;
+    position: absolute;
+    left: 620px;
+    height: 60px;
+    width: 100px;
+    font-size: 3vh;
+    border: 2px solid black;
+}
+/* .txt-1 {
+    color: blue;
+    background-color: purple;
+} */
+p {
+    color: black;
+
+
+}
+#score-list {
+    list-style: none;
+}
+
+.score-section {
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border: 2px solid black;
+    background-color: white;
+
+}
+thead {
+    border: 2px solid black;
+}
+
+/* p:active {
+    color: white;
+    /* transition: 1s; */
+/* } */
+.yay-txt {
+    color: black;
+    background-color: white;
+    height: 50px;
+    position: absolute;
+    bottom: 250px;
+    left: 300px;
+    font-size: xx-large;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+h2 {
+    font-size: 40px;
+    color: black;
+}
+#card-0 {
+    grid-column:1;
+    grid-row: 1;
+}
+#card-1 {
+    grid-column:2;
+    grid-row:1;
+}
+#card-2 {
+    grid-column:3;
+    grid-row:1;
+}
+#card-3 {
+    grid-column:4;
+    grid-row:1;
+}
+#card-4 {
+    grid-column:1;
+    grid-row:2;
+}
+#card-5 {
+    grid-column:2;
+    grid-row:2;
+}
+#card-6 {
+    grid-column:3;
+    grid-row:2;
+}
+#card-7 {
+    grid-column:4;
+    grid-row:2;
+}
+#card-8 {
+    grid-column:1;
+    grid-row:3;
+}
+#card-9 {
+    grid-column:2;
+    grid-row:3;
+}
+#card-10 {
+    grid-column:3;
+    grid-row:3;
+}
+#card-11 {
+    grid-column:4;
+    grid-row:3;
+}
+#card-12 {
+    grid-column:1;
+    grid-row:4;
+}
+#card-13 {
+    grid-column:2;
+    grid-row:4;
+}
+#card-14 {
+    grid-column:3;
+    grid-row:4;
+}
+#card-15 {
+    grid-column:4;
+    grid-row:4;
+}
+
+.maze-container {
+    height: 500px;
+    width: 800px;
+    background-color: lightgreen;
+    position: absolute;
+    /* z-index: -1; */
+    /* display: flex; */
+    overflow: none;
+    left: 100px;
+}
+.maze-obs {
+    background-color: black;
+}
+button {
+    position: absolute;
+}
