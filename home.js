@@ -23,7 +23,7 @@ let card15 = document.getElementById('card-15')
 let startBtn = document.getElementById('start-btn')
 let scoreList = document.getElementById('score-list')
 
-// let cardArr = ["one", "two", "one", "two", "three", "three", "four", "four", "five", "five", "six", "six", "seven", "seven", "eight", "eight"]
+let cardArr = ["one", "two", "one", "two", "three", "three", "four", "four", "five", "five", "six", "six", "seven", "seven", "eight", "eight"]
 function shuffle(arr) {
     let currentIndex = arr.length, randomIndex;
     while(currentIndex != 0) {
@@ -62,20 +62,29 @@ const getScore = () => {
         })
 }
 getScore()
-
+// const prompt = () => {
+//     let varb = prompt("Give us a name for your best time")
+//     if(varb === '') {
+//         let varb = prompt("Please enter an actual name")
+//     }
+//     return varb
+// }
 
 let started = 0
 startBtn.addEventListener('click', (req, res) => {
     if(started > 0) {
         return
     }else {
-        started++
+    started++
+    // yay.remove()
     
-    let cardArr = axios.get(`http://localhost:3888/api/cardarr/`)
-    .then((res) => {
-        let tempArr = res.data
-    })
+    
+    // let cardArr = axios.get(`http://localhost:3888/api/cardarr/`)
+    // .then((res) => {
+    //     let tempArr = res.data
+    // })
     let name = prompt("Give us a name for your best time")
+    // let name = prompt()
     let now = performance.now()
     let newArr = shuffle(cardArr);
     let score = document.createElement('h2')
@@ -85,7 +94,7 @@ startBtn.addEventListener('click', (req, res) => {
         textBox.textContent = newArr[i]
         textBox.classList.add(`${textBoxArr[i]}`)
         tileArr[i].appendChild(textBox)
-           
+        // tileArr[i].backgroundColor = 'black'
         tileArr[i].addEventListener('click', () => {
             // tileArr[i].innerHTML = ''
             checkArr.push(textBox.textContent)
@@ -98,7 +107,7 @@ startBtn.addEventListener('click', (req, res) => {
                 finished8++
                 for(i=0; i<tileArr.length; i++) {
                     if(tileArr[i].textContent === checkArr[0]) {
-                        tileArr[i].remove()
+                        tileArr[i].style.backgroundColor = 'gray'
                         // console.log(finished8)
                         if(finished8===8) {
                         let later = performance.now()
@@ -110,6 +119,7 @@ startBtn.addEventListener('click', (req, res) => {
                         yay.classList.add('yay-txt')
                         body.appendChild(yay)
                         finished8=0   
+                        started = 0
                         message.push(name)
                         message.push(time) 
                         let score = document.createElement('li')
